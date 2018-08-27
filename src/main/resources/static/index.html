@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <link href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/1.0.2/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
+    <script src="/main.js"></script>
+</head>
+<body>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-12 space-bottom10">
+            <form class="form-inline">
+                <button id="connect"
+                        class="btn btn-default"
+                        type="submit">Connect</button>
+                <button id="disconnect"
+                        class="btn btn-default"
+                        type="submit"
+                        disabled="disabled">Disconnect</button>
+                    <label for="resptime">Response time</label>
+                    <input type="text"
+                           id="resptime"
+                           class="form-control"
+                           placeholder="Max response time...">
+            </form>
+        </div>
+    </div>
+    <div class="row space-bottom10">
+        <form class="form-inline">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="keyword">Keyword</label>
+                    <input type="text" id="keyword" class="form-control"
+                           placeholder="Enter the keyword..">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="url">URL to listen</label>
+                <input type="text"
+                       id="url"
+                       class="form-control"
+                       placeholder="enter url...">
+            </div>
+            <div class="col-md-2">
+                <button id="send"
+                        class="btn btn-default"
+                        type="submit">Send</button>
+            </div>
+            <div class="col-md-2">
+                <button id="unsubscribe"
+                        class="btn btn-default"
+                        type="submit">Stop</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+                <table id="conversation" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th width="20%">URL</th>
+                        <th width="20%">RESPONSE CODE</th>
+                        <th width="20%">RESPONSE TIME (ms)</th>
+                        <th width="20%">RESPONSE LENGTH</th>
+                        <th width="20%">KEYWORD</th>
+                    </tr>
+                    </thead>
+                    <tbody id="messages">
+                    </tbody>
+                </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
